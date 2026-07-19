@@ -1,10 +1,9 @@
 import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-backend-webgpu';
-import { isValidDetection, APP_CONFIG } from '../utils/config.js';
+import { isValidDetection, APP_CONFIG, MODEL_CONFIG } from '../utils/config.js';
 import { isWebGPUSupported, logError, validateModelMetadata } from '../utils/common.js';
 
-const MODEL_PATH = '/model/model.json';
-const METADATA_PATH = '/model/metadata.json';
+const { MODEL_PATH, METADATA_PATH } = MODEL_CONFIG.DETECTION;
 
 export class DetectionService {
   constructor() {

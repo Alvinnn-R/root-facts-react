@@ -128,6 +128,11 @@ function App() {
               actions.setFunFactData('error');
             } finally {
               isFetchingFactData = false;
+
+              // Auto-stop camera after successful detection
+              cameraSvc.stopCamera();
+              stopDetectionLoop();
+              actions.setRunning(false);
             }
           }
         }

@@ -25,7 +25,7 @@ export class CameraService {
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
         throw new Error('Akses mediaDevices tidak didukung (pastikan menggunakan HTTPS atau localhost).');
       }
-      
+
       const tempStream = await navigator.mediaDevices.getUserMedia({ video: true });
       tempStream.getTracks().forEach((track) => track.stop());
 
